@@ -10,12 +10,24 @@
   <div id="app"></div>
   <script src="../../dist/vue.global.js"></script>
   <script>
-    debugger
-    const vm=Vue.createApp({
-      template:`
-        <div>hello world</div>
-      `
-    }).mount("#app")
+    const App={
+      template:`<div>{{message}}</div>
+        <button @click="changeMessage">修改</button>
+      `,
+      data(){
+        return {
+          message:"hello wrold"
+        }
+      },
+      methods:{
+        changeMessage(){
+          this.message="您好啊，平凡的js码农"
+        }
+      }
+    }
+
+    const app=Vue.createApp(App)
+    app.mount("#app")
   </script>
 </body>
 </html>
